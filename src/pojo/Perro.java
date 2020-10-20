@@ -22,6 +22,23 @@ public class Perro {
 		this.historia = "h";
 	}
 
+	// Otro constructor
+	public Perro(String nombre) {
+		this(); // llama la constructor por defecto (pulsar Contrl + Click)-->asistente Ó mirar
+				// en Outline
+		this.nombre = nombre;
+
+	}
+
+	// Otro constructor
+	public Perro(String nombre, String raza) {
+		this(); // llama la constructor por defecto (pulsar Contrl + Click)-->asistente Ó mirar
+				// en Outline
+		this.nombre = nombre;
+		this.raza = raza;
+
+	}
+
 	// Getters y setters
 	///////////////////////////////////////
 
@@ -67,6 +84,13 @@ public class Perro {
 
 	public void setHistoria(String historia) {
 		this.historia = historia;
+	}
+
+	// toString
+	@Override
+	public String toString() {
+		return "Perro [nombre=" + nombre + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado
+				+ ", historia=" + historia + "]";
 	}
 
 }

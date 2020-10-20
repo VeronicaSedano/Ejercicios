@@ -43,26 +43,6 @@ public class Ejercicio1 {
 		p4.setHistoria(
 				"Este husky siberiano comandó a un grupo de perros para llevar vacunas a un pueblo que tenía una epidemia de difteria y que se encontraba aislado a mil kilómetros de distancia del hospital más cercano. Se le considera el héroe de los niños del pueblo Nome.");
 
-		/* 5º */
-		Perro p5 = new Perro();
-		p4.setNombre("");
-		p4.setHistoria("");
-
-		/* 6º */
-		Perro p6 = new Perro();
-		p4.setNombre("");
-		p4.setHistoria("");
-
-		/* 7º */
-		Perro p7 = new Perro();
-		p4.setNombre("");
-		p4.setHistoria("");
-
-		/* 8º */
-		Perro p8 = new Perro();
-		p4.setNombre("");
-		p4.setHistoria("");
-
 		System.out.println(snoppy.getNombre() + " " + snoppy.getPeso() + " kg");
 		System.out.println(p2.getNombre() + " " + p2.getHistoria());
 		System.out.println(p3.getNombre() + " " + p3.getHistoria());
