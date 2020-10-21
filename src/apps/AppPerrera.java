@@ -14,6 +14,10 @@ public class AppPerrera {
 	public static final String OPCION_4 = "4";
 	public static final String SALIR = "s";
 
+	public static final String OP_1 = "1";
+	public static final String OP_2 = "2";
+	public static final String SALIR_2 = "s";
+
 	// variables globales para esta Clase
 	static Scanner sc = null;
 	static ArrayList<Perro> lista = new ArrayList<Perro>();
@@ -78,32 +82,41 @@ public class AppPerrera {
 		for (Perro p : lista) {
 			// Si el nombre de la lista es igual al introducido:
 			if (p.getNombre().equals(nombreActualizar)) {
-				// Modificar datos
-				for (int i = 0; i < lista.size(); i++) {
 
-					Perro pIteracion = lista.get(i);
+				boolean salir = false;
 
-					if (nombreActualizar.equals(pIteracion.getNombre())) {
-						lista.set(index, element);
-						break; // salir del for
+				do {
+					// Modificar datos
+					System.out.println("*** MODIFICAR DATOS ***");
+					System.out.println("1.- Modificar nombre \n2.- Modificar raza \nS.- Salir");
+					System.out.println("\n Selecciona una opcion del menu:");
+					String op = sc.nextLine();
+
+					switch (op) {
+					case OP_1:
+						System.out.println("Escribe el nuevo nombre:");
+						p.setNombre(sc.nextLine());
+						break;
+
+					case OP_2:
+						System.out.println("Escribe la nueva raza:");
+						p.setRaza(sc.nextLine());
+						break;
+
+					case SALIR_2:
+						salir = true;
+						break;
+
+					default:
+						System.out.println("Tienes que elegir una opcion del menu.");
 					}
 
-				} // for
+				} while (!salir);
 
-			} else {
-				System.out.println("El nombre del perro que has escrito no existe");
-			}
-		}
+			} // if
+		} // for
 
-		/*
-		 * // obtener la posicion de un objeto dentro del array int posicion =
-		 * lista.indexOf(nombreActualizar);
-		 * 
-		 * // Pedir nuevo nombre perro System.out.println("Escribe el nuevo nombre:");
-		 * String nombreNuevo = sc.nextLine();
-		 * 
-		 * // Reemplazar antiguo nombre por el nuevo lista.set(posicion, nombreNuevo);
-		 */
+		System.out.println("El nombre que has escrito no existe.");
 
 	}
 
