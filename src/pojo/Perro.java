@@ -31,11 +31,12 @@ public class Perro {
 	}
 
 	// Otro constructor
-	public Perro(String nombre, String raza) {
+	public Perro(String nombre, String raza, boolean isVacunado) {
 		this(); // llama la constructor por defecto (pulsar Contrl + Click)-->asistente Ó mirar
 				// en Outline
 		this.nombre = nombre;
 		this.raza = raza;
+		this.isVacunado = isVacunado;
 
 	}
 

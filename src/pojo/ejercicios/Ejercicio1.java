@@ -9,7 +9,7 @@ import pojo.Perro;
  * Mostrar por pantalla sus nombres e historias;
  * 
  * 
- * @see https://blog.patasbox.com/los-8-perros-mas-fomos-de-la-historia/
+ * 
  * @author ur00
  *
  */

@@ -5,18 +5,26 @@ import java.util.Scanner;
 
 import pojo.Perro;
 
+/**
+ * Ejercicio Perrera
+ * 
+ * @author Veronica
+ *
+ */
+
 public class AppPerrera {
 
-	// constantes
-	public static final String OPCION_1 = "1";
-	public static final String OPCION_2 = "2";
-	public static final String OPCION_3 = "3";
-	public static final String OPCION_4 = "4";
-	public static final String SALIR = "s";
+	// constantes menu principal
+	private static final String OPCION_1 = "1";
+	private static final String OPCION_2 = "2";
+	private static final String OPCION_3 = "3";
+	private static final String OPCION_4 = "4";
+	private static final String SALIR = "s";
 
-	public static final String OP_1 = "1";
-	public static final String OP_2 = "2";
-	public static final String SALIR_2 = "s";
+	// constantes menu modificar
+	private static final String OP_1 = "1";
+	private static final String OP_2 = "2";
+	private static final String SALIR_2 = "s";
 
 	// variables globales para esta Clase
 	static Scanner sc = null;
@@ -35,7 +43,7 @@ public class AppPerrera {
 
 		do {
 
-			// MENU
+			// MENU principal
 			System.out.println("*** APP  PERRERA ***");
 
 			pintarMenu();
@@ -92,6 +100,7 @@ public class AppPerrera {
 					System.out.println("\n Selecciona una opcion del menu:");
 					String op = sc.nextLine();
 
+					// menu modificar
 					switch (op) {
 					case OP_1:
 						System.out.println("Escribe el nuevo nombre:");
@@ -170,7 +179,8 @@ public class AppPerrera {
 			// Se puede listar de las dos formas:
 			// System.out.println("Nombre: " + perro.getNombre() + " // " + "Raza: " +
 			// perro.getRaza());
-			System.out.println(String.format("%s [%s]", perro.getNombre(), perro.getRaza()));
+			System.out.println(
+					String.format("%s [%s] Vacunado: %s", perro.getNombre(), perro.getRaza(), perro.isVacunado()));
 		}
 
 	}
