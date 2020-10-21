@@ -9,9 +9,8 @@ import pojo.Perro;
  * Mostrar por pantalla sus nombres e historias;
  * 
  * 
+ * @author Verónica
  * 
- * @author ur00
- *
  */
 
 public class Ejercicio1 {

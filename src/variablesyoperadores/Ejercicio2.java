@@ -6,6 +6,8 @@ package variablesyoperadores;
  * asignadas desde código valores (se recomienda valores entre -10 y 10)
  * realizar las siguientes operaciones: La suma de todos los números La resta de
  * todos los números La media de todos los números
+ * 
+ * 
  */
 public class Ejercicio2 {
 

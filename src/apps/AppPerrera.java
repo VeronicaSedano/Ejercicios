@@ -6,7 +6,15 @@ import java.util.Scanner;
 import pojo.Perro;
 
 /**
- * Ejercicio Perrera
+ * Ejercicio Perrera <br>
+ * Crea un menu principal con las siguientes opciones:
+ * <ol>
+ * <li>Listar todos los perros</li>
+ * <li>Crear un perro</li>
+ * <li>Dar de baja un Perro</li>
+ * <li>Update un Perro (actualizar)</li>
+ * <li>Salir</li>
+ * </ol>
  * 
  * @author Veronica
  *
