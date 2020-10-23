@@ -5,6 +5,7 @@ public class Perro {
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
 	///////////////////////////////////////
+	private int id;
 	private String nombre;
 	private String raza;
 	private float peso;
@@ -15,6 +16,7 @@ public class Perro {
 	///////////////////////////////////////
 	public Perro() {
 		super();
+		this.id = 0; // falta poner en el toString();
 		this.nombre = "Sin nombre";
 		this.raza = "Cruce";
 		this.peso = 0f;
@@ -42,6 +44,14 @@ public class Perro {
 
 	// Getters y setters
 	///////////////////////////////////////
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getNombre() {
 		return nombre;
