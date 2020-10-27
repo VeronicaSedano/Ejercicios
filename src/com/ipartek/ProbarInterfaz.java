@@ -1,5 +1,7 @@
 package com.ipartek;
 
+import pojo.Serie;
+
 public class ProbarInterfaz {
 
 	public static void main(String[] args) throws Exception {
@@ -23,7 +25,7 @@ public class ProbarInterfaz {
 
 		System.out.println("/////////////////////////////");
 
-		// imprimir tipo loteria
+		// Imprimir tipo loteria
 		try {
 			util.imprimirNumeroLoteria(1);
 			util.imprimirNumeroLoteria(2);
@@ -35,13 +37,17 @@ public class ProbarInterfaz {
 
 		System.out.println("/////////////////////////////");
 
-		// pedri vueltas
+		// Pedir vueltas
 		try {
 			float vueltas = util.calcularVueltas(100, 50);
 			System.out.println("Las vueltas son: " + vueltas);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+
+		// Pedir datos Serie
+		Serie s = util.pedirDatosPorConsola();
+		System.out.println("Tu serie es: " + s);
 
 	}// main
 

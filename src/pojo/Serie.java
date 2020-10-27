@@ -26,15 +26,6 @@ public class Serie {
 	private String plataforma;
 
 	// Constructor
-	public Serie(String nombre, int numTemporadas, float duracion, String plataforma) {
-		super();
-		this.nombre = nombre;
-		this.numTemporadas = numTemporadas;
-		this.duracion = duracion;
-		this.plataforma = plataforma;
-	}
-
-	// Constructor 2
 	public Serie(String nombre) {
 		super();
 		this.nombre = nombre;
