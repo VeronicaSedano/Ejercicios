@@ -7,7 +7,7 @@ import pojo.Jugador;
 
 /**
  * Crear una lista de jugadores de futbol. En dicha lista se guardaran objetos
- * de la clase Jugador, que tendrá los atributos nombre, de tipo Sting y dorsal
+ * de la clase Jugador, que tendrá los atributos nombre, de tipo String y dorsal
  * de tipo int. <br>
  * Solicitar los datos de los jugadores por teclado, y una vez introducido el
  * primero, se insertara en la lista y se preguntara si se desea introducir otro
@@ -22,58 +22,78 @@ import pojo.Jugador;
 
 public class Ejercicio2 {
 
+	private static final String OP_SI = "s";
+	private static final String OP_NO = "n";
+
 	static ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+	static Scanner sc = null;
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		String nombre;
-		int dorsal;
-		String respuesta;
-		boolean esSi = true;
-		Jugador jugador = new Jugador();
+		sc = new Scanner(System.in);
 
-		// Pedir la primera vez
-		System.out.println("Escribe el nombre del jugador: ");
-		nombre = sc.nextLine();
-		jugador.setNombre(nombre);
-		listaJugadores.add(jugador);
+		// Crear primer jugador
+		crearJugador();
 
-		System.out.println("Escribe el dorsal del jugador: ");
-		dorsal = Integer.parseInt(sc.nextLine());
-		jugador.setDorsal(dorsal);
-		listaJugadores.add(jugador);
+		boolean salir = false;
 
 		do {
+			// Dibujar menu
+			System.out.println("---------------------------------");
 			System.out.println("¿Quieres introducir otro jugador? ");
-			respuesta = sc.nextLine();
+			System.out.println("1º Escribe 's' si SI quieres");
+			System.out.println("2º Escribe 'n' si NO quieres");
+			System.out.println("---------------------------------");
+			String respuesta = sc.nextLine();
 
-			if (respuesta.equals("s")) {
-				System.out.println("Escribe el nombre del jugador: ");
-				nombre = sc.nextLine();
-				jugador.setNombre(nombre);
-				listaJugadores.add(jugador);
-
-				System.out.println("Escribe el dorsal del jugador: ");
-				dorsal = Integer.parseInt(sc.nextLine());
-				jugador.setDorsal(dorsal);
-				listaJugadores.add(jugador);
-
-			} else if (respuesta.equals("n")) {
-				esSi = false;
-
-			} else {
-				System.out.println("Debes introducir S o N");
-				esSi = false;
+			// Gestionar respuestas menu
+			switch (respuesta) {
+			case OP_SI:
+				crearJugador();
+				break;
+			case OP_NO:
+				salir = true;
+				break;
+			default:
+				System.out.println("Tienes que elegir una opcion del menu: ");
+				break;
 			}
 
-		} while (esSi);
+		} while (!salir);
 
-		// mostrar arrayList
-		for (Jugador j : listaJugadores) {
-			System.out.println(j.getNombre() + " " + j.getDorsal());
-		}
+		System.out.println("***********  ADIOS, nos vemos pronto   **************");
+		sc.close();
+
+		// Al decir que ya no quieres añadir mas jugadores se muestran todos
+		listar();
 
 	} // main
+
+	private static void listar() {
+
+		System.out.println("*** LISTA JUGADORES ***");
+		for (Jugador j : listaJugadores) {
+			System.out.println(String.format("Nombre: %s y Dorsal: %s", j.getNombre(), j.getDorsal()));
+		}
+
+	}
+
+	public static void crearJugador() {
+
+		// Pedir datos
+		System.out.println("Escribe el nombre del jugador: ");
+		String nombre = sc.nextLine();
+
+		System.out.println("Escribe el dorsal del jugador: ");
+		int dorsal = Integer.parseInt(sc.nextLine());
+
+		// Añadir
+		Jugador jugador = new Jugador();
+		jugador.setNombre(nombre);
+		jugador.setDorsal(dorsal);
+
+		listaJugadores.add(jugador);
+
+	}
 
 }
