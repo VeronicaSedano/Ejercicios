@@ -21,7 +21,13 @@ public class ProbarVehiculos {
 		}
 
 		try {
-			patinete.frenar(1);
+			patinete.frenar(80);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		try {
+			patinete.apagar();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -5,10 +5,40 @@ import interfaces.app.interfaces.Vehiculo;
 public class Patinete implements Vehiculo {
 
 	// Atributos
-	int velocidadActual = 0;
-	boolean estaArrancado = true;
+	public int velocidadActual;
+	boolean estaArrancado;
 
 	String siEncendido = "";
+
+	// Constructores
+	public Patinete() {
+		super();
+		this.velocidadActual = 0;
+		this.estaArrancado = false;
+	}
+
+	public Patinete(int velocidadActual, boolean estaArrancado) {
+		super();
+		this.velocidadActual = velocidadActual;
+		this.estaArrancado = estaArrancado;
+	}
+
+	// Getters y Setters
+	public int getVelocidadActual() {
+		return velocidadActual;
+	}
+
+	public void setVelocidadActual(int velocidadActual) {
+		this.velocidadActual = velocidadActual;
+	}
+
+	public boolean isEstaArrancado() {
+		return estaArrancado;
+	}
+
+	public void setEstaArrancado(boolean estaArrancado) {
+		this.estaArrancado = estaArrancado;
+	}
 
 	// Metodos implementados
 	/**
@@ -40,6 +70,7 @@ public class Patinete implements Vehiculo {
 				velocidadActual += incrementoVel;
 				System.out.println("Acabas de acelerar.");
 			} else {
+				this.setVelocidadActual(VEL_MAX_PATINETE);
 				throw new Exception("Sobrepasas la velocidad maxima permitida.");
 			}
 
@@ -58,11 +89,13 @@ public class Patinete implements Vehiculo {
 	@Override
 	public void frenar(int decrementoVel) throws Exception {
 		if (estaArrancado == true) {
-			if ((velocidadActual - decrementoVel) <= 0) {
+			if ((velocidadActual - decrementoVel) >= 0) {
 				velocidadActual = velocidadActual - decrementoVel;
 				System.out.println("Acabas de frenar.");
 			} else {
+				this.setVelocidadActual(0);
 				throw new Exception("La velocidad no puede bajar de 0.");
+
 			}
 
 		} else {
@@ -78,8 +111,9 @@ public class Patinete implements Vehiculo {
 	public void apagar() throws Exception {
 		if (velocidadActual == 0) {
 			estaArrancado = false;
+			System.out.println("Acabas de apagar el motor.");
 		} else {
-			throw new Exception("Tienes que poner la velocidad actual a 0.");
+			throw new Exception("No puedes apagar el motor. Tienes que poner la velocidad actual a 0.");
 		}
 
 	}// apagar()
