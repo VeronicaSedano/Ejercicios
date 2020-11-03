@@ -2,6 +2,8 @@ package pojo;
 
 public class Perro {
 
+	public static final String RAZA_PERRO = "cruce";
+
 	// Atributos, deben ser siempre privados
 	// la forma de manipular estos atributos es a traves de los getteres y settres
 	///////////////////////////////////////
@@ -18,7 +20,7 @@ public class Perro {
 		super();
 		this.id = 0; // falta poner en el toString();
 		this.nombre = "Sin nombre";
-		this.raza = "Cruce";
+		this.raza = RAZA_PERRO;
 		this.peso = 0f;
 		this.isVacunado = false;
 		this.historia = "h";
@@ -40,6 +42,13 @@ public class Perro {
 		this.raza = raza;
 		this.isVacunado = isVacunado;
 
+	}
+
+	// Otro constructor
+	public Perro(String nombre, String raza, float peso) {
+		this(nombre);
+		this.raza = raza;
+		this.peso = peso;
 	}
 
 	// Getters y setters
@@ -65,8 +74,26 @@ public class Perro {
 		return raza;
 	}
 
+	/**
+	 * 
+	 * Comprobamos que haya una raza valida.<br>
+	 * Si es null o vacio usamos la constante RAZA_PERRO.
+	 * 
+	 * @param raza
+	 */
 	public void setRaza(String raza) {
-		this.raza = raza;
+		if (raza != null) {
+
+			if (raza.trim().isEmpty()) {
+				raza = RAZA_PERRO;
+			}
+
+			this.raza = raza;
+
+		} else {
+			this.raza = RAZA_PERRO;
+		}
+
 	}
 
 	public float getPeso() {

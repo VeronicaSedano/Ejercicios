@@ -2,7 +2,7 @@ package interfaces.app.clases;
 
 import interfaces.app.interfaces.Vehiculo;
 
-public class Patinete implements Vehiculo {
+public class Patinete implements Vehiculo, AutoCloseable {
 
 	// Atributos
 	public int velocidadActual;
@@ -134,6 +134,13 @@ public class Patinete implements Vehiculo {
 		}
 
 		return "Soy un patinete, estoy " + siEncendido + " y mi velocidad actual es de " + velocidadActual + " km/h.";
+	}
+
+	@Override
+	public void close() throws Exception {
+		System.out.println("Cerramos el patinete");
+		apagar();
+
 	}
 
 }
