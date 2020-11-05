@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * DAO para definir las operaciones de CRUD con una Clase Generica, en este caso
  * hemos usado una P de Pojo
  * 
- * @author ur00
+ * @author Veronica
  *
  */
 public interface IDao<P> {

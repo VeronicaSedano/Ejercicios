@@ -14,12 +14,26 @@ public class AppPerrera2 {
 	static private PerroDao modelo = new PerroDAOSqlite();
 	static private String opcion = ""; // opcion seleccionada en el menu por el usuario
 
-	// opciones del menu
+	// cuando usamos un patron singleton, el constructor es privado
+	// static private PerroDao modelo = new PerroDAOSqlite();
+	// deberemos usar el metodo getInstance();
+	// static private PerroDao modelo = PerroDAOSqlite.getInstance();
+	// static private PerroDao modelo = PerroDAOArrayList.getInstance();
+
+	// opciones del menu principal
 	static final private String OP_LISTAR = "1";
 	static final private String OP_CREAR = "2";
 	static final private String OP_MODIFICAR = "3";
 	static final private String OP_ELIMINAR = "4";
 	static final private String OP_SALIR = "s";
+
+	// opciones menu de modificar
+	static final private String OP_NOMBRE = "1";
+	static final private String OP_RAZA = "2";
+	static final private String OP_PESO = "3";
+	static final private String OP_VACUNADO = "4";
+	static final private String OP_HISTORIA = "5";
+	static final private String OPCION_SALIR = "s";
 
 	public static void main(String[] args) {
 
@@ -60,6 +74,63 @@ public class AppPerrera2 {
 	}// main
 
 	private static void modificar() {
+
+		boolean flag = true;
+		int id = 0;
+		Perro pModificar = null;
+
+		// buscar perro por id
+		do {
+			System.out.println("Escribe el ID del perro que quieres modificar:");
+			id = Integer.parseInt(sc.nextLine());
+
+			pModificar = modelo.recuperar(id);
+			if (pModificar == null) {
+				System.out.println("*Lo sentimos pero no existe ese perro");
+			} else {
+				flag = false;
+			}
+
+		} while (flag);
+
+		boolean salir = false;
+		String opcion2 = "";
+
+		do {
+
+			System.out.println("¿Que quieres modificar? \n");
+			System.out.println("1º Nombre \n 2º Raza \n 3º Peso \n 4º Vacunado \n 5º Historia \n S- Salir");
+			opcion2 = sc.nextLine();
+
+			switch (opcion) {
+			case OP_NOMBRE:
+
+				break;
+			case OP_RAZA:
+
+				break;
+			case OP_PESO:
+
+				break;
+			case OP_VACUNADO:
+
+				break;
+			case OP_HISTORIA:
+
+				break;
+			case OP_SALIR:
+				salir = true;
+				System.out.println("*** ADIOS ***");
+				break;
+
+			default:
+				System.out.println(" ** por favor selecciona una opción valida ** ");
+				break;
+			}
+
+		} while (!salir);
+
+		sc.close();
 
 	}
 

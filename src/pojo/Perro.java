@@ -1,6 +1,6 @@
 package pojo;
 
-public class Perro {
+public class Perro implements Comparable<Perro> {
 
 	public static final String RAZA_PERRO = "cruce";
 
@@ -49,6 +49,12 @@ public class Perro {
 		this(nombre);
 		this.raza = raza;
 		this.peso = peso;
+	}
+
+	// Otro constructor
+	public Perro(int id, String nombre) {
+		this(nombre);
+		this.id = id;
 	}
 
 	// Getters y setters
@@ -129,6 +135,11 @@ public class Perro {
 	public String toString() {
 		return "Perro [nombre=" + nombre + ", raza=" + raza + ", peso=" + peso + ", isVacunado=" + isVacunado
 				+ ", historia=" + historia + "]";
+	}
+
+	@Override
+	public int compareTo(Perro o) {
+		return (int) (this.peso - o.getPeso());
 	}
 
 }
