@@ -1,0 +1,81 @@
+/* Nuestra hoja de estilos */
+
+
+@import 'reset.css';
+
+
+/* varibales globales */
+:root {
+
+    --blanco: #FFF;
+    --negro: #000;
+    --marron: peru;
+    --verde: lime;
+    --rosa: pink;
+}
+
+/* media para impresoras, tambien se puede declara en el html con un link */
+
+@media print {
+
+    body { 
+        font-size: 10pt;
+        color: green;
+    }
+
+}
+
+body{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    color: var(--negro);
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    /* prefijos para dar soporte a diferentes navegadorescontent: 
+
+        -moz- para Firefox y los demás navegadores de Gecko,
+        -webkit- para los navegadores WebKit: Chrome, Safari, etc.
+        -ms- para Microsoft (Internet Explorer),
+        -o- para Presto, el antiguo motor de Opera.
+    
+    */    
+    background-image: -moz-linear-gradient(top, #D7D 0%, #068 100%); 
+    background-image: -o-linear-gradient(top, #D7D 0%, #068 100%);  
+    background-image: -ms-linear-gradient(top, #D7D 0%, #068 100%); 
+    background-image: -webkit-linear-gradient(top, #D7D 0%, #068 100%); 
+    background-image: linear-gradient(top, #D7D 0%, #068 100%);
+    color: var(--blanco);
+
+}
+
+
+section {
+    background-color: var(--verde);
+}
+
+footer {
+    background-color: var(--rosa);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--negro);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+p span {
+    font-weight: 600;
+}
+
+.subrayado {
+    background-color: yellow;
+    color: #000;
+}
+
+#unico {
+    background-color: blueviolet;
+}
