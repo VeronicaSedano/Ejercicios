@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heroes y Heroinas</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-
+    <title>Marvel DC</title>
+    <!-- enlace para el css -->
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
-<body id="top">
+<body>
 
     <header>
-        <h1 class="titulo">MarvelDCpedia</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="heroes.html">Héroes</a></li>
-                <li><a href="villanos.html">Villanos</a></li>
-                <li><a href="comics.html">Comics</a></li>
-                <li><a href="acercax.html">Acerca de</a></li>
-            </ul>
-        </nav>
-
+        <div class="container">
+            <h1>Heroes de Marvel</h1>
+        </div>
     </header>
+
+    <nav id="header">
+        <ul class="container">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="heroes.html">Héroes</a></li>
+            <li><a href="villanos.html">Villanos</a></li>
+            <li><a href="comics.html">Comics</a></li>
+            <li><a href="acerca.html">Acerca de</a></li>
+        </ul>
+    </nav>
+
 
     <main>
         <table>
@@ -80,33 +83,40 @@
 
         </table>
 
+
     </main>
 
     <footer>
-        <section>
-            <ol>
-                <li><a href="">Cookies</a></li>
-                <li><a href="">Aspectos legales</a></li>
-                <li><a href="">Contacto</a></li>
-            </ol>
-        </section>
+        <div class="container">
+            <section>
+                <nav>
+                    <ul>
+                        <li><a href="">Cookies</a></li>
+                        <li><a href="">Aspectos legales</a></li>
+                        <li><a href="">Contacto</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section>
+                <img class="logo" src="img/marvel.png" alt="marvel">
+                <img class="logo" src="img/dc.png" alt="dc">
+            </section>
+            <section>
+                <nav>
+                    <ul class="text-right">
+                        <li> <a href="https://www.marvel.com/">Marvel</a><br>
+                        <li><a href="https://www.dccomics.com/">DC Comics</a></li>
+                    </ul>
+                </nav>
+            </section>
 
-        <section id="logos">
-            <img class="logo" src="img/marvel.png" alt="marvel">
-            <img class="logo" src="img/dc.png" alt="dc">
-        </section>
 
-        <section>
-            <a href="https://www.marvel.com/">Marvel</a><br>
-            <a href="https://www.dccomics.com/">DC Comics</a>
-        </section>
-
-
-
+            <!-- 
+                las tablas se usan solo para mostrar datos, no para maquetar, 
+                pasar todo a los section de arriba
+            -->
+        </div>
     </footer>
-
-
-
 
 </body>
 

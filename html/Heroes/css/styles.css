@@ -1,77 +1,155 @@
-/*Variables globales*/
-:root {
-    --negro: #000;
+/* Nuestra hoja de estilos */
+
+
+* { 
+    margin: 0;
+    padding: 0;
 }
 
+
+/* varibales globales */
+:root {
+    --color-primary: #2763e4;
+    --color-accent: #7cbaec;
+    --blanco: #FFF;
+    --negro: #202020;
+    --marron: peru;
+    --verde: lime;
+    --rosa: pink;
+    --gris-ligth: #f7f7f7;
+    --gris-medium: #6f777b;
+    --gris-dark: #333;
+}
+
+/*
+@font-face {
+    font-family: Roboto;
+    src: url("https://i.annihil.us/u/prod/marvel/font/roboto/Roboto-Regular.ttf") format("truetype")
+}
+*/
+
+
+/* estilos a todas las etiquetas */
 
 body {
-    max-width: 1024px;
-    margin: auto;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: var(--negro);
+    font-size: 1rem; /* 16px */
+    line-height: 1.3rem;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    box-sizing: border-box;
 }
 
-table {
-    width: 100%;
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+    color: var(--color-primary);
+}
+
+
+h1 {   
+    text-align: center;
+    text-transform: capitalize;
+    margin: 1.5rem 0;
+
+}
+
+h2 {
+    margin: 2rem 0 1.5rem 0;
+}
+
+
+p {
+    margin: 1rem 0;
+}
+
+a {
+    text-decoration: none; /* quitar rayita de abajo al los enlaces */
+    cursor: pointer;  /* cambiar icono de flecha a mano */
+}
+
+li {
+    list-style: none;
+}
+
+
+main, .container {
+    max-width: 1024px;
+    box-sizing: border-box;  /* si tenemos padding o border lo descuenta del hancho, no los suma */
+    margin: auto; /* centrar el contenido en horizontal */
 }
 
 header {
-    background-color: #3DCD2D;
-    color: white;
+    background-color: var(--negro);
+    padding: 0.25rem;
+}
+
+
+main {
+    background-color: var(--gris-ligth); 
+    padding: 1rem;
+    text-align: center;
 }
 
 footer {
-    background-color: #13460d;
+    background-color: var(--gris-ligth);
+    color: var(--gris-medium);
+    border-top: 1px solid var(--gris-medium);
+    padding: 1rem;    
+}
+
+footer .container {
     display: flex;
+}
+
+footer a {
+    color: var(--gris-medium);
+}
+
+
+footer section {
+    width: 100%;
+}
+
+nav#header {
+    background-color: var(--color-primary);
+    color: var(--blanco);
     padding: 10px;
-
-}
-footer section{
-    width: 33%;
-    text-align: center;
-    margin: auto;
+    position: sticky;
+    top: 0;
 }
 
-h1 {
-    color: var(--negro);
-    text-align: center;
-    text-transform: capitalize;
+nav#header a { 
+    color: #FFF; 
 }
 
-header nav{
-    background-color:  #13460d;
-    color: white;
-    padding: 3px;
-}
+nav#header ul {
 
-header nav ul{
+    /* posicionar los LIs en horizontal y dividir el spacio */
     display: flex;
     justify-content: space-between;
-}
+}    
 
-header nav ul li{
-    list-style: none;
-    text-align: center;
+nav #header ul li {
+    list-style: none; /* quitar puntito */    
     width: 100%;
-    padding: 5px 0;
-}
-
-header nav ul li a:hover{
-    background-color: #3DCD2D;
-    padding: 8%;
- 
-}
-
-a{
-color: white;
-text-decoration: none;
-cursor: pointer;
-}
-
-main section{
-    padding: 10px;
     text-align: center;
-    background-color: #ACF3A5;
-    margin: auto;
+    padding: 5px 0;
+}   
+
+nav#header ul li:hover {
+    background-color: var(--color-accent);
+}    
+
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.text-right {
+    text-align: right;
 }
 
 #inicioMain section{
@@ -82,22 +160,15 @@ main section{
 
 #inicioMain article{
     padding: 30px;
+    
 }
 
-#logos img{
-    border-radius: 40%;
+#inicioMain article img{
+    margin: auto;
 }
 
-main table tr td{
-    border: 2px, solid black;
-}
-footer ol{
-    list-style-type: none;
+#demasPagsMain section{
+    margin-left: 300px;
+    margin-right: 300px;
 }
 
-main ul{
-    list-style-type: none;
-}
-h1{
-    padding: 1rem 0;
-}
