@@ -21,16 +21,6 @@
     --gris-dark: #333;
 }
 
-/*
-@font-face {
-    font-family: Roboto;
-    src: url("https://i.annihil.us/u/prod/marvel/font/roboto/Roboto-Regular.ttf") format("truetype")
-}
-*/
-
-
-/* estilos a todas las etiquetas */
-
 body {
     color: var(--negro);
     font-size: 1rem; /* 16px */
@@ -44,10 +34,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 1rem 0;
     color: var(--color-primary);
+    text-align: center;
 }
 
 
-h1 {   
+h1 {  
     text-align: center;
     text-transform: capitalize;
     margin: 1.5rem 0;
@@ -88,7 +79,7 @@ header {
 main {
     background-color: var(--gris-ligth); 
     padding: 1rem;
-    text-align: center;
+    text-align: justify;
 }
 
 footer {
@@ -130,7 +121,7 @@ nav#header ul {
     justify-content: space-between;
 }    
 
-nav #header ul li {
+nav#header ul li {
     list-style: none; /* quitar puntito */    
     width: 100%;
     text-align: center;
@@ -152,18 +143,18 @@ nav#header ul li:hover {
     text-align: right;
 }
 
-#inicioMain section{
+main .container{
     display: flex;
     justify-content: space-between;
     
 }
 
-#inicioMain article{
+main .container article{
     padding: 30px;
     
 }
 
-#inicioMain article img{
+main .container article img{
     margin: auto;
 }
 

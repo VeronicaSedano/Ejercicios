@@ -1,0 +1,65 @@
+:root {
+    --color-primary:rgb(151, 110, 76);
+    --background-color:  rgb(255, 244, 224);
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 1024px;
+    margin: auto;
+    text-align: center;
+    background-color: var(--background-color);
+}
+
+h1, h2, h3{
+    color: var(--color-primary);
+}
+
+h1{
+    background-color: white;
+    margin: 0px;
+    padding: 30px;
+}
+
+nav {
+    background-color: var(--color-primary);
+    padding: 5px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+}
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+#volver{
+    text-align: left;
+    margin: 40px;
+    
+}
+
+#volver a{
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+#enlaces{
+    color: var(--color-primary);
+    font-weight: bold;
+    margin: 40px;
+
+}
+
